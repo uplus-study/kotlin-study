@@ -210,3 +210,41 @@ class LengthCounter {
 ##### equals()
 
 ##### hashCode()
+
+- equels를 override 할 때, 반드시 hashCode도 override 해야한다.
+- JVM 언어에서 equels가 true를 반환하는 두 객체의 hashCode는 같아야한다.
+
+### 4.3.2 데이터 클래스: 모든 클래스가 정의히야 하는 메서드 자동 생성
+
+```kotlin
+data class Client(val name: String, val postalCode: Int)
+```
+
+##### 추가 자동 생성 메서드
+
+- `copy()`: 객체를 복사하면서 일부 프로퍼티를 바꿀 수 있게 해주는 메서드
+
+### 4.3.3 클래스 위임: by 키워드 사용
+
+## 4.4 object 키워드: 클래스 선언과 인스턴스 생성
+
+static 같은 느낌(?)
+앱 전체에 1개만 생성된다.
+
+### 4.4.1 객체 선언: 싱글턴을 쉽게 만들기
+
+```kotlin
+object Payroll {
+  val allEmployees = arrayListOf<Person>()
+
+  fun calculateSalary() {
+    for (person in allEmployee) {
+      ...
+    }
+  }
+}
+```
+
+- 생성자는 쓸 수 없다. 객체 선언 위치에서 생성자 호출 없이 즉시 만들어진다.
+
+### 4.4.2 동반 객체: 팩토리 메서드와 정적 멤버가 들어갈 장소
