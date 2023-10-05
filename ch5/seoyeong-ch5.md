@@ -104,9 +104,10 @@ val grouped: Map<Int, List<String>> = strs.groupBy { it.length }
 
 val books = listOf(
     Book("동용", listOf("작가1", "작가2")),
-    Book("시집", listOf("작가3", "작가1")))
+    Book("시집", listOf("작가3", "작가1"))
+)
     
-    val authors = books.flatMap { it.authros } // List<String> [작가1, 작가2, 작가3, 작가1]
+val authors = books.flatMap { it.authros } // List<String> [작가1, 작가2, 작가3, 작가1
     .toSet()
 ```
 
