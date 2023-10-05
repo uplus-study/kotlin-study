@@ -30,7 +30,7 @@ fun Person.countryName(): String {
 val addr = person.company?.address ?: throw IllegalArgumentException("No address")
 ```
 
-### 안전한 캐트 연산자 `as?`
+### 안전한 캐스트 연산자 `as?`
 - 지정한 타입으로 캐스트를 수행하는데 해당 타입으로 변환할 수 없으면 NULL
 
 ```Kotlin
@@ -61,7 +61,7 @@ fun sendEmailTo(email: String){
 }
 
 // let을 통해 null이 아니면 특정 람다 실행 (not null)
-var email: String? = "neity16@daum.net"
+var email: String? = "xx@gmail.com"
 email?.let{ sendEmailTo(it) }
 
 // null로 아무 작동 일어나지 않음.
@@ -85,11 +85,13 @@ class MyTest{
   private lateinit var myService: MyService
 
   // 생성 후에 프로퍼티를 초기화! 
-  @Before fun setUp(){
+  @Before
+  fun setUp(){
     myService = MyService()
   }
 
-  @Test fun testAction(){
+  @Test
+  fun testAction(){
     // lateinit으로 선언하고 @Before를 통해 이후에 초기화하여 에러가 발생하지 않음.
     Assert.assertEquals("foo", myService.performAction())
   }
@@ -151,14 +153,13 @@ class NullableStringPrinter : StringProcessor {
 - 널 가능 원시 타입은 래퍼 타입으로 컴파일
   - 코틀린 Int? -> 자바 Integer
   - 자바 원시 타입은 널 참조를 가질 수 없기 때문
-- 지네릭 클래스는 래퍼 타입으로 컴파일
+- 제네릭 클래스는 래퍼 타입으로 컴파일
   - JVM은 타입인자로 원시 타입을 허용하지 않기 때문
 
 ### 숫자 변환
 - 숫자 타입 변환은 명시적으로 해야 변환됨.
 - 숫자 리터럴은 컴파일러가 필요한 변환을 자동으로 처리함.
 - 연산자를 각 타입에 대해 오버로딩함.
-
 
 ### 최상위 타입
 `Any`
@@ -184,6 +185,8 @@ class NullableStringPrinter : StringProcessor {
 List<Int?>
 List<Int>?
 List<Int?>?
+
+// 하지만 널 허용 지양하는 것이 좋음.
 ```
 - filterNotNull
   - 널이 될 수 있는 값을 가지는 컬렉션에서 null이 아닌 값들만 걸러줌.
@@ -209,7 +212,7 @@ List<Int?>?
   - 변경 가능 타입: mutableMapOf, hashMapOf, linkedMapOf, sortedMapOf
 
 ### 컬렉션을 플랫폼 타입으로 다루기
-- 자바의 컬렉션 타입은 조회 전용, 변경 가능으로 다룰 수  있음.
+- 자바의 컬렉션 타입은 조회 전용, 변경 가능으로 다룰 수 있음.
 - 고려 사항
   - 컬렉션이 널이 될 수 있는지
   - 컬렉션 원소가 널이 될 수 있는지
@@ -226,9 +229,7 @@ val nulls2 = Array﴾20﴿ { i ‐> ﴾i + 1﴿.toString﴾﴿ }
   - 컬렉션 -> 배열
 
 - 원시 타입 배열
- - IntArray -> int[]
- - ByteArray -> byte[]
- - CharArray -> char[]
- - BooleanArray -> boolean[]
-
- - Array 같은 타입은 `toIntArray` 등 함수를 통해 IntArray로 변환 가능
+  - IntArray -> int[]
+  - ByteArray -> byte[]
+  - CharArray -> char[]
+  - BooleanArray -> boolean[]
