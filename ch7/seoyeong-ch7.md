@@ -11,10 +11,6 @@ data class Point(val x: Int, val y: Int) {
     return Point(x + other.x, y + other.y)
   }
 }
-
-val p1 = Point(10, 20)
-val p2 = Point(30, 40)
-println(p1 + p2)
 ```
 
 - 확장 함수도 가능
@@ -110,9 +106,20 @@ class Foo {
 }
 ```
 
-### 위임 프로퍼티 사용: by lazy()를 사용한 프퍼티 초기화 지연
+### 위임 프로퍼티 사용: by lazy()를 사용한 프로퍼티 초기화 지연
 
 ```Kotlin
+class Person(val name: String) {
+    private var _emails: List<Email>? = null
+    val emails: List<Email>
+       get() {
+           if (_emails == null) {
+               _emails = loadEmails(this)
+}
+           return _emails!!
+       }
+}
+
 // 프로퍼티 초기화 지연
 class Person(val name: String) {
   val emails by lazy { loadEmails(this) }
