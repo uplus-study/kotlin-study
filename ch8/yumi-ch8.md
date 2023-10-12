@@ -8,7 +8,7 @@
 
 함수 타입의 정의를 위해서는 파라미터 타입을 괄호 안에 넣고, 그 뒤에 화살표(->)를 추가한 다음 반환 타입을 기술하면 된다.
 
-![img.png](img.png)
+![img](https://github.com/uplus-study/kotlin-study/assets/66773030/1ad15d68-9359-4e09-acf5-8075017886f6)
 
 null이 될 수 있는 함수 타입을 표현하려면 파라미터 타입과 반환 타입 사이에 물음표(?)를 넣으면 된다.
 
@@ -21,7 +21,7 @@ var canReturnNull: (Int, Int) -> Int? = { x, y -> null }
 var funOrNull: ((Int, Int) -> Int)? = null
 ```
 ### 인자로 받은 함수 호출
-![img_1.png](img_1.png)
+![img_1](https://github.com/uplus-study/kotlin-study/assets/66773030/bd9d4705-472d-47a9-aaab-b9842fe6f8b6)
 
 ### 자바에서 코틀린 함수 타입 사용
 컴파일 된 코드 안에서 함수 타입은 일반 인터페이스로 변환, 인터페이스에 invoke 메서드를 호출하여 함수를 실행할 수 있다.
@@ -191,9 +191,9 @@ fun lookForAlice(people: List<Person>) {
 - 람다 안에서 로컬 return은 for 루프의 break 역할과 비슷
 - return으로 실행을 끝내고 싶은 람다 식 앞에 레이블을 붙이고, return 키워드 뒤에 레이블을 추가
 
-![img_2.png](img_2.png)
+![img_2](https://github.com/uplus-study/kotlin-study/assets/66773030/271ae6ee-6db0-4d6a-9457-b9d21e4c4a39)
 
 ### 무명 함수: 기본적으로 로컬 return
 - 무명 함수는 코드 블록을 함수에 넘길 때 사용하는 다른 방법
 
-![img_3.png](img_3.png)
+![img_3](https://github.com/uplus-study/kotlin-study/assets/66773030/93260e87-6d34-4046-8249-680e219494ac)

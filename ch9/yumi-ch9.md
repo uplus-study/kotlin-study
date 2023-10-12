@@ -11,7 +11,7 @@
 
 ### 제네릭 함수와 프로퍼티
 
-![img.png](img.png)
+![img](https://github.com/uplus-study/kotlin-study/assets/66773030/aeedc059-89c4-438e-894e-837fe882da6b)
 
 - 제네릭 함수를 호출할 때는 함수 이름 뒤에 꺽쇠 괄호를 붙이고 그 안에 타입 인자를 지정한다.
 - 타입 인자를 명시하지 않으면 컴파일러가 타입 인자를 추론한다.
@@ -52,7 +52,7 @@ interface List<T> {
 
 - 타입 파라미터에 대한 상한을 지정하면 그 타입 파라미터를 구체적으로 지정하는 타입 인자는 반드시 그 상한 타입이거나 그 상한 타입의 하위 타입이어야 한다.
 
-![img_1.png](img_1.png)
+![img_1](https://github.com/uplus-study/kotlin-study/assets/66773030/4667e151-7ee1-4e4d-b361-8b4ffb07dc2e)
 
 타입 파라미터를 제약하는 함수 선언
 
@@ -98,7 +98,7 @@ val list1: List<String> = listOf("a", "b")
 val list2: List<Int> = listOf(1, 2, 3)
 ~~~
 
-![img_2.png](img_2.png)
+![img_2](https://github.com/uplus-study/kotlin-study/assets/66773030/4ae740ec-9968-4424-a46c-795422e86674)
 
 - 컴파일러는 두 리스트를 다른 타입으로 인식
 - 실행 시점에 그 둘은 같은 타입(List)로 인식, is 검사에서 타입 인자로 지정된 타입을 검사할 수 없다.
@@ -184,11 +184,11 @@ ClassCastExcepetion : Integer cannot be cast to String
 - 하위 타입 : 어떤 타입 A의 값이 필요한 모든 장소에 어떤 타입 B의 값을 넣어도 아무 문제가 없다면 타입 B는 타입 A의 하위 타입이다.
 - 상위 타입 : A가 B의 하위 타입이면 B는 A의 상위 타입이다.
 
-![img_3.png](img_3.png)
+![img_3](https://github.com/uplus-study/kotlin-study/assets/66773030/587dc469-aa55-42d9-9d24-45ff9503c72d)
 
 널이 될 수 없는 타입은 널이 될 수 있는 타입의 하위 타입이다.
 
-![img_4.png](img_4.png)
+![img_4](https://github.com/uplus-study/kotlin-study/assets/66773030/5cb57a6c-063a-4b8c-8eb8-2ef330a882b3)
 
 무공변 : 제네릭 타입을 인스턴스화 할 때 타입 인자로 서로 다른 타입이 들어가면 인스턴스 타입 사이의 하위 타입 관계가 성립하지 않으면 그 제네릭 타입을 무공변이라고 말한다.
 
@@ -196,7 +196,7 @@ ClassCastExcepetion : Integer cannot be cast to String
 
 A가 B의 하위 타입일 때 Producer<`A`>가 Producer<`B`>의 하위 타입이면 Producer는 공변적이다.
 
-![img_5.png](img_5.png)
+![img_5](https://github.com/uplus-study/kotlin-study/assets/66773030/23888cb0-446e-4b38-82ac-d254e6cc3727)
 
 클래스 타입 파라미터 T 앞에 out 키워드를 붙이면 클래스 안에서 T를 사용하는 메서드가 아웃 위치에서만 사용하게 허용, 인 위치에서는 사용할 수 없다.
 따라서 T로 인해 생기는 하위 타입 관계의 타입 안정성을 보장
@@ -224,7 +224,7 @@ interface Comparable<in T> {
 - T가 인 위치에서만 쓰임
 - 타입 B가 타입 A의 하위 타입인 경우 Comparable<`A`>는 Comparable<`B`>의 하위 타입인 관계가 성립하면 제네릭 클래스 Consumer<T>는 타입 인장 T에 대해 반공변이다.
 
-![img_6.png](img_6.png)
+![img_6](https://github.com/uplus-study/kotlin-study/assets/66773030/6e3fe076-421c-4f1a-b3a4-3cca07058853)
 
 | 공변성                                    | 반공변성                                   | 무공변성               |
 |----------------------------------------|----------------------------------------|--------------------|
