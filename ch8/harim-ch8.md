@@ -254,7 +254,7 @@ fun readFirstLineFromFile(path: String): String {
 ### 고차 함수 안에서 흐름 제어
 - **람다 안의 return문: 람다 둘러싼 함수로부터 반환**
   - 람다 안에서 return 사용하면 람다로부터만 반환되는 게 아니고 람다 호출하는 함수가 실행 끝내고 반환함
-  - `non-lock return`: 자신 둘러싸고 있는 블록보다 더 바깥에 있는 다른 블록을 반환하게 만드는 return
+  - `non-local return`: 자신 둘러싸고 있는 블록보다 더 바깥에 있는 다른 블록을 반환하게 만드는 return
   - 코틀린에서는 언어가 제공하는 기본 구성 요소가 아니라 람다를 받는 함수로 for, synchronized와 같은 기능 구현함 -> 자바에서의 return과 같은 의미
   - return 이 바깥쪽 함수 반환시키는 때는 람다를 인자로 받는 함수가 인라인 함수인 경우뿐
   - 인라이닝되지 않는 함수에 전달되는 람다 안에서는 return 사용 X
